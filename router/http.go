@@ -8,7 +8,8 @@ import (
 
 func Router() *gin.Engine {
 	r := gin.Default()
-	r.GET("/",serivce.GetBookList)
+	//书籍
+	// r.GET("/",serivce.GetBookList)
 	r.GET("book/getBookList",serivce.GetBookList)
 	r.POST("book/createBook",serivce.CreateBook)
 	r.POST("book/deleteBookByName",serivce.DeleteBookByName)
@@ -16,5 +17,11 @@ func Router() *gin.Engine {
 	r.POST("book/updateBook",serivce.UpdateBook)
 	r.POST("book/findBookByName",serivce.FindBookByName)
 	r.POST("book/findBookById",serivce.FindBookById)	
+	//用户
+	r.GET("user/getUserList",serivce.GetUserList)	
+	r.POST("user/createUser",serivce.CreateUser)
+	r.POST("user/deleteUser",serivce.DeleteUser)
+	r.POST("user/updateUser",serivce.UpdateUser)
+	r.POST("user/findUserByPhone",serivce.FindUserByPhone)
 	return r
 }
