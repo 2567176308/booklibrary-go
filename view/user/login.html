@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎</title>
+    <link href="../../layui/css/layui.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("../../layui/image/background.jpg");
+            background-size: 1920*643;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="home-banner-wraps ace-view-fullColumn">
+            <div>
+                <ul class="layui-nav layui-bg-green" lay-filter="">
+              <li class="layui-nav-item"><a href="">最新活动</a></li>
+              
+            </ul>
+            </div>
+    </div>
+    <div class="layout">
+        <div class="layui-container">  
+            <div class="layui-row">
+              <div class="layui-col-md3">
+                你的内容 3/12
+              </div >
+              <div class="layui-col-md9" style="background-color: aliceblue;margin-top: 70px;">
+                <div>
+                <form class="layui-form" action="">
+                  <div class="layui-form-item"style="padding-top: 5px;padding-bottom: 12px;font-size: 20px;margin: left 20px;padding-left: 30px">
+                    登录账号
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">手机号码</label>
+                    <div class="layui-input-inline">
+                      <input type="text" name="title" required  lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">辅助文字</div>
+                  </div>
+                  
+                  
+                  <div class="layui-form-item">
+                    <div class="layui-input-block">
+                      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+             
+            
+          </div>
+    </div>
+</body>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+
+layui.use('form', function(){
+  var form = layui.form;
+  form.render(); // 渲染全部
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+</script>
+</html>

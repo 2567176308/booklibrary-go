@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>开始使用 layui</title>
+    <link href="layui/css/layui.css" rel="stylesheet">
+</head>
+<body>
+    <div class="layui-form" lay-filter="test1">
+        …
+      </div>
+
+    <script src="layui/layui.js"></script>
+    <script>
+        layui.use('form', function(){
+          var form = layui.form;
+         
+          // 一般当表单存在动态生成时，进行渲染
+          form.render(null, 'test1'); // 渲染所在容器内的全部表单
+          form.render('select', 'test1'); // 渲染所在容器内的 select 元素
+        });
+        </script>
+</body>
+</html>
