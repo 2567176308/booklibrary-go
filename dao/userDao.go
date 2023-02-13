@@ -34,3 +34,5 @@ func FindUserByPhone(phone string) []*model.UserBasic {
 	utils.DB.Where("phone = ?",phone).Find(&data)
 	return data	
 }
+
+

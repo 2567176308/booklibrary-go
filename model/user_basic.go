@@ -8,8 +8,9 @@ type UserBasic struct {
 	Phone string
 	PassWord string
 	Avatar string //头像
-	DeviceInfo []Book //保留关键字
+	DeviceInfo string  //保留关键字
 	Salt string //加密字符串
+
 
 
 }

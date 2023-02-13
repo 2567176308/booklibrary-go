@@ -63,7 +63,7 @@ func UpdateUser(c *gin.Context) {
 	user.Phone = c.Request.FormValue("phone")
 	user.PassWord = c.Request.FormValue("password")
 	repassword := c.Request.FormValue("repassword")
-	if user.PassWord == repassword {
+	if user.PassWord == repassword && id != 0{
 		dao.UpdateUser(user)
 		c.JSON(200,gin.H{
 			"code":0,

@@ -23,5 +23,7 @@ func Router() *gin.Engine {
 	r.POST("user/deleteUser",serivce.DeleteUser)
 	r.POST("user/updateUser",serivce.UpdateUser)
 	r.POST("user/findUserByPhone",serivce.FindUserByPhone)
+	//借阅
+	r.POST("contact/borrowBook",serivce.BorrowBook)
 	return r
 }

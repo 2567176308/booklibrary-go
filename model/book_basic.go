@@ -15,6 +15,7 @@ type  Book struct {
 	Reserve int //预约数量
 	Remaining int //剩余本数
 	Loan int //借出数量
+
 }
 
 func (table *Book) TableName() string {

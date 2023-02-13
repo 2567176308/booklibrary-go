@@ -68,3 +68,7 @@ func FindBookById(id uint) []*model.Book {
 	fmt.Println("[find]id>>>",id)
 	return data
 }
+
+//借阅书籍
+
+
