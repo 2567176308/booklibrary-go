@@ -29,10 +29,17 @@ func UpdateUser(user model.UserBasic) *gorm.DB{
 	return utils.DB.Updates(&user)
 }
 //查
-func FindUserByPhone(phone string) []*model.UserBasic {
-	data := make([]*model.UserBasic,10)
+func FindUserByPhone(phone string) model.UserBasic {
+	data := model.UserBasic{}
 	utils.DB.Where("phone = ?",phone).Find(&data)
 	return data	
+}
+//查询账and密码(登录)
+func FindUserByPhoneAndPwd(phone,password string) model.UserBasic {
+	data := model.UserBasic{}
+	utils.DB.Where("phone = ? and password = ?",phone,password).First(&data)
+	return data
+	
 }
 
 

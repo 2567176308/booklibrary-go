@@ -29,6 +29,17 @@ func InitConfig() {
 	fmt.Println("config  app inited 。。。。")
 }
 
+func InitConfigTest() {
+	viper.SetConfigName("app")
+	viper.AddConfigPath("../config")
+	err := viper.ReadInConfig()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("config  app inited 。。。。")
+}
+
+
 func InitMySQL() {
 	//自定义日志模板 打印SQL语句
 	newLogger := logger.New(
