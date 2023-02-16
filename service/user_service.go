@@ -28,7 +28,8 @@ func CreateUser(c *gin.Context) {
 	user.Name = c.Request.FormValue("name")
 	user.PassWord = c.Request.FormValue("password")
 	repassword:= c.Request.FormValue("repassword")
-	if repassword == user.PassWord {
+	data := dao.FindUserByPhone(user.Phone)
+	if repassword == user.PassWord && data.Phone == ""{
 		user.PassWord = utils.MakePassword(repassword, salt)
 		user.Salt = salt
 		dao.CreateUser(user)
