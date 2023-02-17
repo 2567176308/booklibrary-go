@@ -11,10 +11,10 @@ func Router() *gin.Engine {
 	//书籍
 	// r.GET("/",serivce.GetBookList)
 	//首页
-	r.GET("/",serivce.GetIndex)
-	//注册
-	r.GET("/register",serivce.Register)
-	r.GET("/login",serivce.LoginTo)
+	// r.GET("/",serivce.GetIndex)
+	// //注册
+	// r.GET("/register",serivce.Register)
+	// r.GET("/login",serivce.LoginTo)
 	r.GET("/booklibrary",serivce.GetBookList)
 	r.Static("/layuiadmin","layuiadmin/")
 	r.GET("book/getBookList",serivce.GetBookList)
